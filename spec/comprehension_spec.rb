@@ -1,20 +1,20 @@
 describe "GIT" do
 # describe "STAGING AND COMMITTING CHANGES:" do
   it "1. What is the syntax for staging a change in index.html if it is in the root dir?" do
-    answer = "?"
+    answer = "git add index.html"
     encoded_answer = "bf338924ddc9ff4eb0c685a794960e0c4ffade2c"
     expect(encode(answer)).to eq(encoded_answer)
   end
 
   it "2. What is the syntax for staging all files, including new, modified, and deleted files?" do
-    answer = "?"
+    answer = "git add ."
     encoded_answers = ["e3ed0db138a439522bc6f0a56c71b2c90e3443db", "d43b64f144ca0689fea30adb6e5cb2150c971a0c", "1a1c76a81d0981b7fe181d7869d1ede4d1a2a24f"]
     expect(encode(answer)).to satisfy { |answer| encoded_answers.include?(answer) }
   end
 
   it "3. What is the syntax for committing all staged changes with the message 
       'update link styles'?" do
-    answer = "?"
+    answer = "git commit -m 'update link styles'"
     encoded_answer = "8d06e2760cda4755f387db0db0e6c425b2ece976"
     expect(encode(answer)).to eq(encoded_answer)
   end
@@ -30,7 +30,7 @@ describe "GIT" do
 # describe "PUSHING:" do
   it "5. From the master branch, what is the syntax for pushing the master branch 
       to the remote master branch where the remote is called 'origin'?" do
-    answer = "?"
+    answer = "git push origin master"
     encoded_answer = "6c8e01a0360da3cf6e314c69c453957b70ab1b4e"
     expect(encode(answer)).to eq(encoded_answer)
   end
@@ -45,7 +45,7 @@ describe "GIT" do
 
   it "7. From the master branch, what is the syntax for pushing the master branch to the 
       # remote master branch where the remote is called 'upstream'?" do
-    answer = "?"
+    answer = "git push upstream master"
     encoded_answer = "46e78005226efc7d1be2b4f9f26bcbdba2bf286d"
     expect(encode(answer)).to eq(encoded_answer)
   end
@@ -61,7 +61,7 @@ describe "GIT" do
 
 # describe "FETCHING:" do
   it "9. What command do you run to update all branches from all remotes?" do
-    answer = "?"
+    answer = "git fetch --all"
     encoded_answer = "01e5711a6878a7ed0e4c0078870b772d0a58f510"
     expect(encode(answer)).to eq(encoded_answer)
   end
@@ -69,7 +69,7 @@ describe "GIT" do
   it "10. Locally you have a master branch, remotely there is a master & add-nav-bar branch.
       You run 'git fetch --all'. 
       What command would you need to run to view and change 'add-nav-bar' branch locally?" do
-    answer = "?"
+    answer = "git checkout add-nav-bar"
     encoded_answer = "a510904cdd46be19a468be297076084d2ec5a5cf"
     expect(encode(answer)).to eq(encoded_answer)
   end
@@ -109,20 +109,20 @@ describe "GIT" do
 
 # describe "BRANCHING:" do
   it "15. What is the syntax for creating a new branch called 'style-image'?" do
-    answer = "?"
+    answer = "git branch style-image"
     encoded_answer = "a905f4cf88cdf57f8c406f2d5e7eb0acafe44c05"
     expect(encode(answer)).to eq(encoded_answer)
   end
 
   it "16. What is the syntax for switching to a branch called 'add-social-media-links'?" do
-    answer = "?"
+    answer = "git checkout add-social-media-links"
     encoded_answer = "1004b71629950e1efa0fe94f053b772b170d66b3"
     expect(encode(answer)).to eq(encoded_answer)
   end
 
   it "17. What is the syntax for switching to master from a feature branch called 
      'add-nav-bar'" do
-    answer = "?"
+    answer = "git checkout master"
     encoded_answer = "0899840db4703b45cc69576b6ec53615d552370d"
     expect(encode(answer)).to eq(encoded_answer)
   end
@@ -154,7 +154,7 @@ describe "GIT" do
   it "21. If you're working on a project on master and you create a new branch, 
       that branch will be empty until you add code" do
     # "true" or "false", in a string
-    answer = "?"
+    answer = "false"
 
     encoded_answer = "7cb6efb98ba5972a9b5090dc2e517fe14d12cb04"
     expect(encode(answer)).to eq(encoded_answer)
@@ -164,7 +164,7 @@ describe "GIT" do
       that you create: for instance, a branch made off of master will look exactly
       like a branch made off of `add-walrus-and-polar-bear`" do
     # "true" or "false", in a string
-    answer = "?"
+    answer = "false"
 
     encoded_answer = "7cb6efb98ba5972a9b5090dc2e517fe14d12cb04"
     expect(encode(answer)).to eq(encoded_answer)
@@ -174,21 +174,21 @@ describe "GIT" do
 # describe "MERGING:" do
   it '23. To merge a feature branch into master, you must first be on master' do
     # "true" or "false", in a string
-    answer = "?"
+    answer = "true"
     encoded_answer = "5ffe533b830f08a0326348a9160afafc8ada44db"
     expect(encode(answer)).to eq(encoded_answer)
   end
 
   it "24. What is the syntax for merging the local feature branch called 
       'update-color-scheme' into master, assuming you're already on master" do
-    answer = "?"
+    answer = "git merge update-color-scheme"
     encoded_answer = "38db6e269e805c09ea6c4bc4eb1bb83829e7504c"
     expect(encode(answer)).to eq(encoded_answer)
   end
 
   it "25. Merge conflicts are bad and always mean that you did something wrong" do
     # "true" or "false", in a string
-    answer = "?"
+    answer = "false"
 
     encoded_answer = "7cb6efb98ba5972a9b5090dc2e517fe14d12cb04"
     expect(encode(answer)).to eq(encoded_answer)
@@ -197,7 +197,7 @@ describe "GIT" do
   it "26. Once you've resolved merge conflicts, you must stage and commit the files
       in which there were conflicts" do
     # "true" or "false", in a string
-    answer = "?"
+    answer = "true"
 
     encoded_answer = "5ffe533b830f08a0326348a9160afafc8ada44db"
     expect(encode(answer)).to eq(encoded_answer)
@@ -207,7 +207,7 @@ describe "GIT" do
 # describe "DELETING BRANCHES:" do
   it "27. From master, what is the syntax for deleting a local branch called 
       'add-link'?" do
-    answer = "?"
+    answer = "git branch -d add-link"
     encoded_answer = "6f91ced397c25c02c099b56d71e11955ea660fa0"
     expect(encode(answer)).to eq(encoded_answer)
   end
@@ -231,14 +231,14 @@ describe "GIT" do
 # describe "STATUS" do
   it "30. If index.html is being tracked and you modify it, but don't stage this change,
       what color will it be if you run 'git status'?" do
-    answer = "?"
+    answer = "red"
     encoded_answer = "78988010b890ce6f4d2136481f392787ec6d6106"
     expect(encode(answer)).to eq(encoded_answer)
   end
 
   it "31. If index.html is being tracked and you modify and stage the change,
       what color will it be if you run 'git status'?" do
-    answer = "?"
+    answer = "green"
     encoded_answer = "bc74f4f071a5a33f00ab88a6d6385b5e6638b86c"
     expect(encode(answer)).to eq(encoded_answer)
   end
